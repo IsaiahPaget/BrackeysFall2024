@@ -12,3 +12,4 @@ func _process(delta: float) -> void:
 #comment some random nonsense
 func _test() -> void:
 	pass
+#hello world
