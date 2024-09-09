@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bo05r1gp4yb32"
-path="res://.godot/imported/char_a_p1_1out_boxr_v01.png-c8a2e106ba0527c2370145dd56aed613.ctex"
+uid="uid://b2gs1p8l8hhx3"
+path="res://.godot/imported/Tile_Sheet_Main.png-096dfc7b6fb091d6a7be3fa2b8bd0b40.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Tiles/FREE Mana Seed Character Base Demo/char_a_p1/1out/char_a_p1_1out_boxr_v01.png"
-dest_files=["res://.godot/imported/char_a_p1_1out_boxr_v01.png-c8a2e106ba0527c2370145dd56aed613.ctex"]
+source_file="res://Assets/Tiles/Tile_Sheet_Main.png"
+dest_files=["res://.godot/imported/Tile_Sheet_Main.png-096dfc7b6fb091d6a7be3fa2b8bd0b40.ctex"]
 
 [params]
 
