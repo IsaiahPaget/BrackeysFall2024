@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://mpcituod5ski"]
+
+[ext_resource type="PackedScene" uid="uid://csvm06mdxxmh4" path="res://Stages/Map.tscn" id="1_pearg"]
+[ext_resource type="PackedScene" uid="uid://cdk7hmrugr82o" path="res://Entities/Characters/Player/Player.tscn" id="2_5515o"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_5515o")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(43, 44)
+
+[node name="Map" parent="." instance=ExtResource("1_pearg")]

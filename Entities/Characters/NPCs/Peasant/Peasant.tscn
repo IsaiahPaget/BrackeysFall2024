@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb1yllhwky73k"]
+
+[ext_resource type="Texture2D" uid="uid://6f1p84k1eh2y" path="res://Assets/Tiles/FREE Mana Seed Character Base Demo/char_a_p1/char_a_p1_0bas_humn_v01.png" id="1_s633r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8wik6"]
+atlas = ExtResource("1_s633r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktew3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8wik6")
+}],
+"loop": true,
+"name": &"Idle_Front",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvhv6"]
+
+[node name="Peasant" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ktew3")
+animation = &"Idle_Front"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_fvhv6")
