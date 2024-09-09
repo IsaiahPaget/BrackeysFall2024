@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://mpcituod5ski"]
+[gd_scene load_steps=4 format=3 uid="uid://mpcituod5ski"]
 
 [ext_resource type="PackedScene" uid="uid://csvm06mdxxmh4" path="res://Stages/Map.tscn" id="1_pearg"]
 [ext_resource type="PackedScene" uid="uid://cdk7hmrugr82o" path="res://Entities/Characters/Player/Player.tscn" id="2_5515o"]
+[ext_resource type="PackedScene" uid="uid://bb1yllhwky73k" path="res://Entities/Characters/NPCs/Peasant/Peasant.tscn" id="3_cptsb"]
 
 [node name="Main" type="Node2D"]
 
@@ -11,3 +12,8 @@ y_sort_enabled = true
 position = Vector2(43, 44)
 
 [node name="Map" parent="." instance=ExtResource("1_pearg")]
+
+[node name="Peasant" parent="." instance=ExtResource("3_cptsb")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(-206, 491)

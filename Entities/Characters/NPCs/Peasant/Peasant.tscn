@@ -1,6 +1,10 @@
-[gd_scene load_steps=32 format=3 uid="uid://bb1yllhwky73k"]
+[gd_scene load_steps=36 format=3 uid="uid://bb1yllhwky73k"]
 
 [ext_resource type="Texture2D" uid="uid://cdeof656bk3r8" path="res://Assets/Sprites/char_peasant_v01.png" id="1_5utbp"]
+[ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/peasant.gd" id="1_xxb8t"]
+[ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/peasant_state_machine.gd" id="3_7cubl"]
+[ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_idle.gd" id="4_tf1nf"]
+[ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_talk.gd" id="5_xywb0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gwxk"]
 atlas = ExtResource("1_5utbp")
@@ -243,13 +247,28 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvhv6"]
 
-[node name="Peasant" type="RigidBody2D"]
+[node name="Peasant" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_xxb8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ktew3")
-animation = &"Walk_Left"
-frame = 5
-frame_progress = 0.323806
+animation = &"Idle_Front"
+autoplay = "Idle_Front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_fvhv6")
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("3_7cubl")
+initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("peasant")]
+script = ExtResource("4_tf1nf")
+peasant = NodePath("../..")
+
+[node name="Talk" type="Node" parent="StateMachine" node_paths=PackedStringArray("peasant")]
+script = ExtResource("5_xywb0")
+peasant = NodePath("../..")
