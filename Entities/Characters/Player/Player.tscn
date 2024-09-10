@@ -243,8 +243,12 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owh8d"]
+radius = 6.0
+height = 24.0
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+y_sort_enabled = true
+position = Vector2(0, -10)
 script = ExtResource("1_wk8ch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

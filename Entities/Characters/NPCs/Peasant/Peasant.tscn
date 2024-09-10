@@ -1,10 +1,11 @@
-[gd_scene load_steps=36 format=3 uid="uid://bb1yllhwky73k"]
+[gd_scene load_steps=37 format=3 uid="uid://bb1yllhwky73k"]
 
 [ext_resource type="Texture2D" uid="uid://cdeof656bk3r8" path="res://Assets/Sprites/char_peasant_v01.png" id="1_5utbp"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/peasant.gd" id="1_xxb8t"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/peasant_state_machine.gd" id="3_7cubl"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_idle.gd" id="4_tf1nf"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_talk.gd" id="5_xywb0"]
+[ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_exiting.gd" id="6_c1a6x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gwxk"]
 atlas = ExtResource("1_5utbp")
@@ -246,10 +247,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvhv6"]
+radius = 5.0
+height = 10.0
 
 [node name="Peasant" type="CharacterBody2D"]
-collision_layer = 2
-collision_mask = 2
+y_sort_enabled = true
+position = Vector2(0, -10)
+motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_xxb8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -259,6 +264,7 @@ animation = &"Idle_Front"
 autoplay = "Idle_Front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
 shape = SubResource("CapsuleShape2D_fvhv6")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -272,3 +278,14 @@ peasant = NodePath("../..")
 [node name="Talk" type="Node" parent="StateMachine" node_paths=PackedStringArray("peasant")]
 script = ExtResource("5_xywb0")
 peasant = NodePath("../..")
+
+[node name="Exiting" type="Node" parent="StateMachine"]
+script = ExtResource("6_c1a6x")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="StateMachine/Exiting" method="_on_timer_timeout"]

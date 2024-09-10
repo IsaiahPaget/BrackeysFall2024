@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dous2ylt1b3ir"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1c4r"]
+size = Vector2(433, 249.5)
+
+[node name="VillageExit" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_g1c4r")
