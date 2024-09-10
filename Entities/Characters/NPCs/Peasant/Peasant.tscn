@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://bb1yllhwky73k"]
+[gd_scene load_steps=41 format=3 uid="uid://bb1yllhwky73k"]
 
 [ext_resource type="Texture2D" uid="uid://cdeof656bk3r8" path="res://Assets/Sprites/char_peasant_v01.png" id="1_5utbp"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/peasant.gd" id="1_xxb8t"]
@@ -6,8 +6,6 @@
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_idle.gd" id="4_tf1nf"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_talk.gd" id="5_xywb0"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_exit.gd" id="6_r6q3r"]
-[ext_resource type="Texture2D" uid="uid://bqj12muqo12dd" path="res://Assets/Sprites/Success.png" id="7_wpfuw"]
-[ext_resource type="Texture2D" uid="uid://bqir48bsao731" path="res://Assets/Sprites/Fail.png" id="8_26s8w"]
 [ext_resource type="Texture2D" uid="uid://qvwvsnflvqrq" path="res://Assets/Sprites/Alerted.png" id="9_qwtrj"]
 [ext_resource type="Texture2D" uid="uid://caubfrjdattop" path="res://Assets/Sprites/Angry.png" id="10_j5bol"]
 [ext_resource type="Texture2D" uid="uid://c747ewdr73c2r" path="res://Assets/Sprites/EButton.png" id="11_aq1ln"]
@@ -289,9 +287,11 @@ initial_state = NodePath("Idle")
 script = ExtResource("4_tf1nf")
 peasant = NodePath("../..")
 
-[node name="Talk" type="Node" parent="StateMachine" node_paths=PackedStringArray("peasant")]
+[node name="Talk" type="Node" parent="StateMachine" node_paths=PackedStringArray("peasant", "alert_particles", "angry_particles")]
 script = ExtResource("5_xywb0")
 peasant = NodePath("../..")
+alert_particles = NodePath("../../Particles/AlertedParticles")
+angry_particles = NodePath("../../Particles/AngryParticles")
 
 [node name="Exiting" type="Node" parent="StateMachine" node_paths=PackedStringArray("peasant")]
 script = ExtResource("6_r6q3r")
@@ -304,42 +304,28 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 wait_time = 0.5
 
-[node name="Particles" type="Node" parent="."]
-
-[node name="SuccessParticles" type="GPUParticles2D" parent="Particles"]
-visible = false
-texture_filter = 1
-position = Vector2(-1, -32)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_hli3u")
-texture = ExtResource("7_wpfuw")
-explosiveness = 0.75
-
-[node name="FailParticles" type="GPUParticles2D" parent="Particles"]
-visible = false
-texture_filter = 1
-position = Vector2(-1, -32)
-amount = 3
-process_material = SubResource("ParticleProcessMaterial_hli3u")
-texture = ExtResource("8_26s8w")
-explosiveness = 0.75
+[node name="Particles" type="Node2D" parent="."]
 
 [node name="AlertedParticles" type="GPUParticles2D" parent="Particles"]
-visible = false
+z_index = 5
 texture_filter = 1
-position = Vector2(-1, -32)
+position = Vector2(0, -31)
+emitting = false
 amount = 3
 process_material = SubResource("ParticleProcessMaterial_hli3u")
 texture = ExtResource("9_qwtrj")
+one_shot = true
 explosiveness = 0.75
 
 [node name="AngryParticles" type="GPUParticles2D" parent="Particles"]
-visible = false
+z_index = 5
 texture_filter = 1
-position = Vector2(-1, -32)
+position = Vector2(0, -31)
+emitting = false
 amount = 3
 process_material = SubResource("ParticleProcessMaterial_hli3u")
 texture = ExtResource("10_j5bol")
+one_shot = true
 explosiveness = 0.75
 
 [node name="InteractButton" type="Sprite2D" parent="."]

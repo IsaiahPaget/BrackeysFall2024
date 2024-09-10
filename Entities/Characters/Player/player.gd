@@ -1,7 +1,13 @@
 extends CharacterBody2D
 
 @onready var AS = $AnimatedSprite2D
-@export var persuation_level := 1
+@export var persuation_level := 1.0
+@export var rate_persuation_level := 0.25
+
+@export var success_particles: GPUParticles2D
+@export var fail_particles: GPUParticles2D
+
+var points := 0
 
 const SPEED = 300.0
 var _direction: Vector2
@@ -12,7 +18,7 @@ func _physics_process(_delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Vector2(
 		Input.get_axis("player_left", "player_right"),
-		Input.get_axis("player_up", "player_down")
+		Input.get_axis("player_up", "player_down") / 2,
 	)
 	if direction.length() > 0:
 		velocity = direction.normalized() * SPEED
@@ -21,10 +27,22 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
-	animate()
+	_animate()
 	move_and_slide()
 
-func animate() -> void:
+func successful_persuade() -> void:
+	persuation_level = persuation_level * rate_persuation_level
+	if success_particles:
+		success_particles.emitting = true
+
+func fail_persuade() -> void:
+	persuation_level *= -rate_persuation_level
+	if persuation_level < 1:
+		persuation_level = 1
+	if fail_particles:
+		fail_particles.emitting = true
+
+func _animate() -> void:
 	if velocity.x > 0:
 		AS.play("Walk_Right")
 		_direction.x = 1

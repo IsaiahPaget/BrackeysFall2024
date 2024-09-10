@@ -1,7 +1,9 @@
-[gd_scene load_steps=33 format=3 uid="uid://cdk7hmrugr82o"]
+[gd_scene load_steps=36 format=3 uid="uid://cdk7hmrugr82o"]
 
 [ext_resource type="Script" path="res://Entities/Characters/Player/player.gd" id="1_wk8ch"]
 [ext_resource type="Texture2D" uid="uid://6f1p84k1eh2y" path="res://Assets/Sprites/char_a_p1_0bas_humn_v01.png" id="2_2d32b"]
+[ext_resource type="Texture2D" uid="uid://bqj12muqo12dd" path="res://Assets/Sprites/Success.png" id="3_7605r"]
+[ext_resource type="Texture2D" uid="uid://bqir48bsao731" path="res://Assets/Sprites/Fail.png" id="4_cuo1u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yy8e1"]
 atlas = ExtResource("2_2d32b")
@@ -246,10 +248,21 @@ animations = [{
 radius = 6.0
 height = 24.0
 
-[node name="Player" type="CharacterBody2D" groups=["Player"]]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_je8xd"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+initial_velocity_max = 43.02
+gravity = Vector3(0, 0, 0)
+damping_max = 93.548
+scale_min = 0.02
+scale_max = 0.05
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("success_particles", "fail_particles") groups=["Player"]]
 y_sort_enabled = true
 position = Vector2(0, -10)
 script = ExtResource("1_wk8ch")
+success_particles = NodePath("Particles/SuccessParticles")
+fail_particles = NodePath("Particles/FailParticles")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -262,3 +275,26 @@ shape = SubResource("CapsuleShape2D_owh8d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="SuccessParticles" type="GPUParticles2D" parent="Particles"]
+texture_filter = 1
+position = Vector2(-1, -32)
+emitting = false
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_je8xd")
+texture = ExtResource("3_7605r")
+one_shot = true
+explosiveness = 0.75
+
+[node name="FailParticles" type="GPUParticles2D" parent="Particles"]
+z_index = 1
+texture_filter = 1
+position = Vector2(-1, -32)
+emitting = false
+amount = 3
+process_material = SubResource("ParticleProcessMaterial_je8xd")
+texture = ExtResource("4_cuo1u")
+one_shot = true
+explosiveness = 0.75

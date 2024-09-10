@@ -31,10 +31,12 @@ position = Vector2(234, 362)
 [node name="Peasant4" parent="NPCs" instance=ExtResource("3_cptsb")]
 z_index = 1
 position = Vector2(393, 199)
+persuation_level = 2
 
 [node name="Peasant5" parent="NPCs" instance=ExtResource("3_cptsb")]
 z_index = 1
 position = Vector2(-859, -154)
+persuation_level = 2
 
 [node name="Peasant6" parent="NPCs" instance=ExtResource("3_cptsb")]
 z_index = 1
