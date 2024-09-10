@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var AS = $AnimatedSprite2D
+@export var persuation_level := 1
 
 const SPEED = 300.0
 var _direction: Vector2

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b2gs1p8l8hhx3" path="res://Assets/Tiles/Tile_Sheet_Main.png" id="1_2nh1l"]
 
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_7gfim"]
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_m8sfq"]
 vertices = PackedVector2Array(128, 0, 0, 64, -128, 0, 0, -64)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(0, -64, -128, 0, 0, 64, 128, 0)])
@@ -12,7 +12,7 @@ agent_radius = 0.0
 texture = ExtResource("1_2nh1l")
 texture_region_size = Vector2i(256, 256)
 0:0/0 = 0
-0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_7gfim")
+0:0/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_m8sfq")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -64, -128, 0, 0, 64, 128, 0)
 
