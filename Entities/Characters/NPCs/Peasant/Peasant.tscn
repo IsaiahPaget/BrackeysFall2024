@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/peasant_state_machine.gd" id="3_7cubl"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_idle.gd" id="4_tf1nf"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_talk.gd" id="5_xywb0"]
-[ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_exiting.gd" id="6_c1a6x"]
+[ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/States/peasant_exit.gd" id="6_r6q3r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gwxk"]
 atlas = ExtResource("1_5utbp")
@@ -269,7 +269,7 @@ shape = SubResource("CapsuleShape2D_fvhv6")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("3_7cubl")
-initial_state = NodePath("Idle")
+initial_state = NodePath("Exiting")
 
 [node name="Idle" type="Node" parent="StateMachine" node_paths=PackedStringArray("peasant")]
 script = ExtResource("4_tf1nf")
@@ -279,10 +279,12 @@ peasant = NodePath("../..")
 script = ExtResource("5_xywb0")
 peasant = NodePath("../..")
 
-[node name="Exiting" type="Node" parent="StateMachine"]
-script = ExtResource("6_c1a6x")
+[node name="Exiting" type="Node" parent="StateMachine" node_paths=PackedStringArray("peasant")]
+script = ExtResource("6_r6q3r")
+peasant = NodePath("../..")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+unique_name_in_owner = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
