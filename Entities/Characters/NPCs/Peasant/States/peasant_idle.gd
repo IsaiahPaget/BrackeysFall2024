@@ -2,8 +2,6 @@ extends State
 class_name PeasantIdle
 
 @export var peasant: CharacterBody2D
-@export var move_speed := 50.0
-@export var talk_radius := 50.0
 
 var player: CharacterBody2D
 var _move_direction: Vector2
@@ -25,7 +23,7 @@ func Update(delta: float) -> void:
 
 func Physics_Update(delta: float) -> void:
 	if peasant:
-		peasant.velocity = _move_direction * move_speed
+		peasant.velocity = _move_direction * peasant.move_speed
 	var player_dir = player.global_position - peasant.global_position
-	if player_dir.length() < talk_radius:
+	if player_dir.length() < peasant.talk_radius:
 		Transitioned.emit(self, "Talk")

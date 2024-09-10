@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 @onready var AS = $AnimatedSprite2D
+@export var move_speed := 50.0
+@export var talk_radius := 30.0
 var _direction: Vector2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
