@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://b77cb4nfvgp7c"]
+
+[node name="CountDown" type="Timer"]
+autostart = true

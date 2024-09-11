@@ -267,6 +267,7 @@ y_sort_enabled = true
 position = Vector2(0, -10)
 motion_mode = 1
 wall_min_slide_angle = 0.0
+safe_margin = 2.0
 script = ExtResource("1_xxb8t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

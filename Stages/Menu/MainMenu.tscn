@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpe32lwlqy2d4"]
+
+[ext_resource type="Script" path="res://Stages/Menu/main_menu.gd" id="1_knxfs"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="MainMenu" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_knxfs")
+
+[node name="MarginContainer" type="MarginContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -81.0
+offset_top = -127.5
+offset_right = 81.0
+offset_bottom = 127.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Play"
+
+[node name="Quit" type="Button" parent="MainMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Play" to="MainMenu" method="_on_play_pressed"]
+[connection signal="pressed" from="MainMenu/MarginContainer/VBoxContainer/Quit" to="MainMenu" method="_on_quit_pressed"]

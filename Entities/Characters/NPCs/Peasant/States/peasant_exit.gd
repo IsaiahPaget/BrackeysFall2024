@@ -2,16 +2,18 @@ extends State
 class_name PeasantExit
 
 @export var peasant: CharacterBody2D
+
 @onready var nav_agent := %NavigationAgent2D as NavigationAgent2D
 @onready var pf_timer := %PathFinderTimer as Timer
 
+var _hud: CanvasLayer
 var _exit: Area2D
 var _exit_distance: Vector2
 var _player: CharacterBody2D
 
 func Enter() -> void:
+	_hud = get_tree().get_first_node_in_group("Hud")
 	_player = get_tree().get_first_node_in_group("Player")
-
 	_exit = get_tree().get_first_node_in_group("Exit")
 	if pf_timer:
 		pf_timer.start()
@@ -35,6 +37,8 @@ func _exit_town():
 		_player.points += 1
 	
 	if peasant:
+		if _hud:
+			_hud.add_life()
 		peasant.queue_free()
 	
 

@@ -21,7 +21,7 @@ func Update(delta: float) -> void:
 	else:
 		_wander()
 
-func Physics_Update(delta: float) -> void:
+func Physics_Update(_delta: float) -> void:
 	if peasant:
 		peasant.velocity = _move_direction * peasant.move_speed
 	var player_dir = player.global_position - peasant.global_position

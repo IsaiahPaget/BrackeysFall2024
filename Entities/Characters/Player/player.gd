@@ -1,15 +1,16 @@
 extends CharacterBody2D
 
+@onready var _hud = get_tree().get_first_node_in_group("Hud")
 @onready var AS = $AnimatedSprite2D
 @export var persuation_level := 1.0
 @export var rate_persuation_level := 0.25
 
+@export var speed = 300.0
 @export var success_particles: GPUParticles2D
 @export var fail_particles: GPUParticles2D
 
 var points := 0
 
-const SPEED = 300.0
 var _direction: Vector2
 
 
@@ -21,25 +22,29 @@ func _physics_process(_delta: float) -> void:
 		Input.get_axis("player_up", "player_down") / 2,
 	)
 	if direction.length() > 0:
-		velocity = direction.normalized() * SPEED
+		velocity = direction.normalized() * speed
 		
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, speed)
+		velocity.y = move_toward(velocity.y, 0, speed)
 
 	_animate()
 	move_and_slide()
 
 func successful_persuade() -> void:
-	persuation_level = persuation_level * rate_persuation_level
+	persuation_level *= 1 + rate_persuation_level
 	if success_particles:
+		if _hud:
+			_hud.set_persuation(persuation_level)
 		success_particles.emitting = true
 
 func fail_persuade() -> void:
-	persuation_level *= -rate_persuation_level
+	persuation_level *= 1 + -rate_persuation_level
 	if persuation_level < 1:
 		persuation_level = 1
 	if fail_particles:
+		if _hud:
+			_hud.set_persuation(persuation_level)
 		fail_particles.emitting = true
 
 func _animate() -> void:

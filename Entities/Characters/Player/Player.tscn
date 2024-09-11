@@ -261,6 +261,7 @@ scale_max = 0.05
 y_sort_enabled = true
 position = Vector2(0, -10)
 script = ExtResource("1_wk8ch")
+speed = 200.0
 success_particles = NodePath("Particles/SuccessParticles")
 fail_particles = NodePath("Particles/FailParticles")
 
