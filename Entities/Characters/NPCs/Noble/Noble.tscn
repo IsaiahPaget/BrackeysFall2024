@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://syrat168lsk"]
+[gd_scene load_steps=42 format=3 uid="uid://syrat168lsk"]
 
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Noble/noble.gd" id="1_bebur"]
 [ext_resource type="Texture2D" uid="uid://cdeof656bk3r8" path="res://Assets/Sprites/char_peasant_v01.png" id="2_ilglj"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Common/NPC_exit.gd" id="6_0bsv8"]
 [ext_resource type="Texture2D" uid="uid://qvwvsnflvqrq" path="res://Assets/Sprites/Alerted.png" id="7_mqkun"]
 [ext_resource type="Texture2D" uid="uid://caubfrjdattop" path="res://Assets/Sprites/Angry.png" id="8_b8n1b"]
-[ext_resource type="Texture2D" uid="uid://c747ewdr73c2r" path="res://Assets/Sprites/EButton.png" id="9_lld22"]
+[ext_resource type="PackedScene" uid="uid://c5oj8irrfxcj0" path="res://Common/Interactable/InteractionArea.tscn" id="9_y4r51"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gwxk"]
 atlas = ExtResource("2_ilglj")
@@ -262,6 +262,9 @@ damping_max = 93.548
 scale_min = 0.02
 scale_max = 0.05
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ct6pl"]
+radius = 45.0444
+
 [node name="Noble" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -10)
@@ -331,10 +334,11 @@ texture = ExtResource("8_b8n1b")
 one_shot = true
 explosiveness = 0.75
 
-[node name="InteractButton" type="Sprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(-19, -23)
-scale = Vector2(0.0664062, 0.0664062)
-texture = ExtResource("9_lld22")
+[node name="InteractionArea" parent="." instance=ExtResource("9_y4r51")]
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 6)
+shape = SubResource("CircleShape2D_ct6pl")
 
 [connection signal="timeout" from="PathFinderTimer" to="StateMachine/Exiting" method="_on_timer_timeout"]

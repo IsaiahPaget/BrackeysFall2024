@@ -73,4 +73,3 @@ func _animate() -> void:
 			AS.play("Idle_Back")
 		elif _direction.y == -1:
 			AS.play("Idle_Front")
-

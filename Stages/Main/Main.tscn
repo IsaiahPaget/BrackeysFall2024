@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://mpcituod5ski"]
 
 [ext_resource type="Script" path="res://Stages/Main/main.gd" id="1_c4d6o"]
-[ext_resource type="PackedScene" uid="uid://cpw10ip4c8tq2" path="res://UI/HUD.tscn" id="2_u885m"]
+[ext_resource type="PackedScene" uid="uid://cpw10ip4c8tq2" path="res://UI/HUD/HUD.tscn" id="2_u885m"]
 [ext_resource type="PackedScene" uid="uid://cdk7hmrugr82o" path="res://Entities/Characters/Player/Player.tscn" id="3_3elht"]
 [ext_resource type="PackedScene" uid="uid://csvm06mdxxmh4" path="res://Stages/Main/Map.tscn" id="4_pu4mx"]
 [ext_resource type="PackedScene" uid="uid://bb1yllhwky73k" path="res://Entities/Characters/NPCs/Peasant/Peasant.tscn" id="5_tyhdn"]

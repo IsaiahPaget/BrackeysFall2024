@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bb1yllhwky73k"]
+[gd_scene load_steps=42 format=3 uid="uid://bb1yllhwky73k"]
 
 [ext_resource type="Texture2D" uid="uid://cdeof656bk3r8" path="res://Assets/Sprites/char_peasant_v01.png" id="1_5utbp"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Peasant/peasant.gd" id="1_xxb8t"]
@@ -6,9 +6,9 @@
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Common/NPC_idle.gd" id="4_tf1nf"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Common/NPC_talk.gd" id="5_xywb0"]
 [ext_resource type="Script" path="res://Entities/Characters/NPCs/Common/NPC_exit.gd" id="6_r6q3r"]
+[ext_resource type="PackedScene" uid="uid://c5oj8irrfxcj0" path="res://Common/Interactable/InteractionArea.tscn" id="9_noj40"]
 [ext_resource type="Texture2D" uid="uid://qvwvsnflvqrq" path="res://Assets/Sprites/Alerted.png" id="9_qwtrj"]
 [ext_resource type="Texture2D" uid="uid://caubfrjdattop" path="res://Assets/Sprites/Angry.png" id="10_j5bol"]
-[ext_resource type="Texture2D" uid="uid://c747ewdr73c2r" path="res://Assets/Sprites/EButton.png" id="11_aq1ln"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gwxk"]
 atlas = ExtResource("1_5utbp")
@@ -250,8 +250,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fvhv6"]
-radius = 5.0
-height = 10.0
+radius = 8.0
+height = 16.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hli3u"]
 particle_flag_disable_z = true
@@ -261,6 +261,9 @@ gravity = Vector3(0, 0, 0)
 damping_max = 93.548
 scale_min = 0.02
 scale_max = 0.05
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c7lst"]
+radius = 36.0139
 
 [node name="Peasant" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -277,7 +280,7 @@ animation = &"Idle_Front"
 autoplay = "Idle_Front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 7)
+position = Vector2(0, 10)
 shape = SubResource("CapsuleShape2D_fvhv6")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -330,10 +333,12 @@ texture = ExtResource("10_j5bol")
 one_shot = true
 explosiveness = 0.75
 
-[node name="InteractButton" type="Sprite2D" parent="."]
+[node name="InteractionArea" parent="." instance=ExtResource("9_noj40")]
 unique_name_in_owner = true
-position = Vector2(-19, -23)
-scale = Vector2(0.0664062, 0.0664062)
-texture = ExtResource("11_aq1ln")
+action_name = "talk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_c7lst")
 
 [connection signal="timeout" from="PathFinderTimer" to="StateMachine/Exiting" method="_on_timer_timeout"]

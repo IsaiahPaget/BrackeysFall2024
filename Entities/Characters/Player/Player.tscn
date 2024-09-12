@@ -260,6 +260,7 @@ scale_max = 0.05
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("success_particles", "fail_particles") groups=["Player"]]
 y_sort_enabled = true
 position = Vector2(0, -10)
+collision_layer = 2
 script = ExtResource("1_wk8ch")
 speed = 200.0
 success_particles = NodePath("Particles/SuccessParticles")
