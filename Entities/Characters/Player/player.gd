@@ -32,7 +32,9 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func successful_persuade() -> void:
-	persuation_level *= 1 + rate_persuation_level
+	if _hud.lives_bar.value >= _hud.lives_bar.max_value * (persuation_level / _hud.persuation_bar.max_value):
+		persuation_level += 1
+
 	if success_particles:
 		if _hud:
 			_hud.set_persuation(persuation_level)

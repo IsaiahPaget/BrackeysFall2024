@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://b3hck31d58n5w"]
 
 [node name="MainSavedEruption" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 539.0
+offset_top = 274.0
+offset_right = 579.0
+offset_bottom = 297.0
+text = "You lost, everyone died"

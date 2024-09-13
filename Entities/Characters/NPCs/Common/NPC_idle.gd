@@ -22,8 +22,11 @@ func Update(delta: float) -> void:
 		_wander()
 
 func Physics_Update(_delta: float) -> void:
-	if npc:
-		npc.velocity = _move_direction * npc.move_speed
+	var player_dist = npc.global_position.distance_to(player.global_position)
+	if player_dist > 600:
+		return
+
+	npc.velocity = _move_direction * npc.move_speed
 	var player_dir = player.global_position - npc.global_position
 	if player_dir.length() < npc.talk_radius:
 		Transitioned.emit(self, "Talk")

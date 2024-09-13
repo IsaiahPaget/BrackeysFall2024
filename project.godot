@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 DialogManager="*res://Common/Singletons/DialogManager/dialog_manager.gd"
 InteractionManager="*res://Common/Singletons/InteractionManager/InteractionManager.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 Player=""

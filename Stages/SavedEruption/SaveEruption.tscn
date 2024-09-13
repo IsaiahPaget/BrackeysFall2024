@@ -1,3 +1,10 @@
 [gd_scene format=3 uid="uid://lbagbdqa5gof"]
 
 [node name="SaveEruption" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 474.0
+offset_top = 287.0
+offset_right = 541.0
+offset_bottom = 310.0
+text = "You won"
