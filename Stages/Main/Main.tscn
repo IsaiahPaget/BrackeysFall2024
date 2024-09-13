@@ -1,117 +1,123 @@
-[gd_scene load_steps=10 format=3 uid="uid://mpcituod5ski"]
+[gd_scene load_steps=11 format=3 uid="uid://mpcituod5ski"]
 
-[ext_resource type="Script" path="res://Stages/Main/main.gd" id="1_c4d6o"]
-[ext_resource type="PackedScene" uid="uid://cpw10ip4c8tq2" path="res://UI/HUD/HUD.tscn" id="2_u885m"]
-[ext_resource type="PackedScene" uid="uid://cdk7hmrugr82o" path="res://Entities/Characters/Player/Player.tscn" id="3_3elht"]
-[ext_resource type="PackedScene" uid="uid://csvm06mdxxmh4" path="res://Stages/Main/Map.tscn" id="4_pu4mx"]
-[ext_resource type="PackedScene" uid="uid://bb1yllhwky73k" path="res://Entities/Characters/NPCs/Peasant/Peasant.tscn" id="5_tyhdn"]
-[ext_resource type="PackedScene" uid="uid://8pl3ttmciapt" path="res://Entities/Characters/NPCs/Worker/Worker.tscn" id="6_d3j8q"]
-[ext_resource type="PackedScene" uid="uid://dous2ylt1b3ir" path="res://Entities/Objects/VillageExit/VillageExit.tscn" id="6_svwsm"]
-[ext_resource type="PackedScene" uid="uid://bcww224pedj8m" path="res://Entities/Characters/NPCs/Guard/Guard.tscn" id="7_kconc"]
-[ext_resource type="PackedScene" uid="uid://syrat168lsk" path="res://Entities/Characters/NPCs/Noble/Noble.tscn" id="8_4dq7p"]
+[ext_resource type="Script" path="res://Stages/Main/main.gd" id="1_qhhmf"]
+[ext_resource type="PackedScene" uid="uid://cpw10ip4c8tq2" path="res://UI/HUD/HUD.tscn" id="2_3a6jm"]
+[ext_resource type="PackedScene" uid="uid://cdk7hmrugr82o" path="res://Entities/Characters/Player/Player.tscn" id="3_8qi0k"]
+[ext_resource type="PackedScene" uid="uid://csvm06mdxxmh4" path="res://Stages/Main/Map.tscn" id="4_habmi"]
+[ext_resource type="PackedScene" uid="uid://bb1yllhwky73k" path="res://Entities/Characters/NPCs/Peasant/Peasant.tscn" id="5_muqxi"]
+[ext_resource type="PackedScene" uid="uid://8pl3ttmciapt" path="res://Entities/Characters/NPCs/Worker/Worker.tscn" id="6_4ulf4"]
+[ext_resource type="PackedScene" uid="uid://bcww224pedj8m" path="res://Entities/Characters/NPCs/Guard/Guard.tscn" id="7_ougum"]
+[ext_resource type="PackedScene" uid="uid://syrat168lsk" path="res://Entities/Characters/NPCs/Noble/Noble.tscn" id="8_h3you"]
+[ext_resource type="PackedScene" uid="uid://dous2ylt1b3ir" path="res://Entities/Objects/VillageExit/VillageExit.tscn" id="9_mb03e"]
+[ext_resource type="AudioStream" uid="uid://4j06tsqqnnfb" path="res://Assets/Audio/Music/BrackeysJam.ogg" id="10_mrx3q"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
-script = ExtResource("1_c4d6o")
+script = ExtResource("1_qhhmf")
 
-[node name="HUD" parent="." instance=ExtResource("2_u885m")]
+[node name="HUD" parent="." instance=ExtResource("2_3a6jm")]
 
-[node name="Player" parent="." instance=ExtResource("3_3elht")]
+[node name="Player" parent="." instance=ExtResource("3_8qi0k")]
 z_index = 1
 position = Vector2(0, 250)
 
-[node name="Map" parent="." instance=ExtResource("4_pu4mx")]
+[node name="Map" parent="." instance=ExtResource("4_habmi")]
 
 [node name="NPCs" type="Node" parent="." groups=["NPCs"]]
 
-[node name="Peasant" parent="NPCs" instance=ExtResource("5_tyhdn")]
+[node name="Peasant" parent="NPCs" instance=ExtResource("5_muqxi")]
 z_index = 1
 position = Vector2(324, -355)
 positive_dialog = "Ahhh, are you serious?\\That’s terrifying\\"
 
-[node name="Peasant2" parent="NPCs" instance=ExtResource("5_tyhdn")]
+[node name="Peasant2" parent="NPCs" instance=ExtResource("5_muqxi")]
 z_index = 1
 position = Vector2(-561, -188)
 positive_dialog = "Ohh, we need to get out of here quickly!\\"
 
-[node name="Peasant3" parent="NPCs" instance=ExtResource("5_tyhdn")]
+[node name="Peasant3" parent="NPCs" instance=ExtResource("5_muqxi")]
 z_index = 1
 position = Vector2(234, 362)
 positive_dialog = "No, this can’t be happening.\\We must warn everyone!\\"
 
-[node name="Peasant4" parent="NPCs" instance=ExtResource("5_tyhdn")]
+[node name="Peasant4" parent="NPCs" instance=ExtResource("5_muqxi")]
 z_index = 1
 position = Vector2(393, 199)
 positive_dialog = "Ahhh, I can see it now.\\We should gather our things and leave.\\"
 
-[node name="Peasant5" parent="NPCs" instance=ExtResource("5_tyhdn")]
+[node name="Peasant5" parent="NPCs" instance=ExtResource("5_muqxi")]
 z_index = 1
 position = Vector2(-859, -154)
 positive_dialog = "Ohh, let’s hurry and find a safe place.\\This is going to be bad.\\"
 
-[node name="Peasant6" parent="NPCs" instance=ExtResource("5_tyhdn")]
+[node name="Peasant6" parent="NPCs" instance=ExtResource("5_muqxi")]
 z_index = 1
 position = Vector2(-1644, -578)
 
-[node name="Worker" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(-653, 806)
 
-[node name="Worker2" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker2" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(-129, 1107)
 
-[node name="Worker3" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker3" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(-1221, 84)
 
-[node name="Worker4" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker4" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(-300, -422)
 
-[node name="Worker5" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker5" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(855, -129)
 
-[node name="Worker13" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker13" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(-2149, -1222)
 
-[node name="Worker14" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker14" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(-1747, -1412)
 
-[node name="Worker15" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker15" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(-1912, -717)
 
-[node name="Worker16" parent="NPCs" instance=ExtResource("6_d3j8q")]
+[node name="Worker16" parent="NPCs" instance=ExtResource("6_4ulf4")]
 position = Vector2(-818, -972)
 
-[node name="Guard" parent="NPCs" instance=ExtResource("7_kconc")]
+[node name="Guard" parent="NPCs" instance=ExtResource("7_ougum")]
 position = Vector2(-2502, -131)
 
-[node name="Guard2" parent="NPCs" instance=ExtResource("7_kconc")]
+[node name="Guard2" parent="NPCs" instance=ExtResource("7_ougum")]
 position = Vector2(-2061, -379)
 
-[node name="Guard3" parent="NPCs" instance=ExtResource("7_kconc")]
+[node name="Guard3" parent="NPCs" instance=ExtResource("7_ougum")]
 position = Vector2(-1061, -860)
 
-[node name="Guard4" parent="NPCs" instance=ExtResource("7_kconc")]
+[node name="Guard4" parent="NPCs" instance=ExtResource("7_ougum")]
 position = Vector2(-840, -36)
 
-[node name="Guard5" parent="NPCs" instance=ExtResource("7_kconc")]
+[node name="Guard5" parent="NPCs" instance=ExtResource("7_ougum")]
 position = Vector2(533, -324)
 
-[node name="Guard6" parent="NPCs" instance=ExtResource("7_kconc")]
+[node name="Guard6" parent="NPCs" instance=ExtResource("7_ougum")]
 position = Vector2(834, 824)
 
-[node name="Guard7" parent="NPCs" instance=ExtResource("7_kconc")]
+[node name="Guard7" parent="NPCs" instance=ExtResource("7_ougum")]
 position = Vector2(-2612, -1030)
 
-[node name="Noble" parent="NPCs" instance=ExtResource("8_4dq7p")]
+[node name="Noble" parent="NPCs" instance=ExtResource("8_h3you")]
 position = Vector2(-2296, 85)
 
-[node name="Noble2" parent="NPCs" instance=ExtResource("8_4dq7p")]
+[node name="Noble2" parent="NPCs" instance=ExtResource("8_h3you")]
 position = Vector2(-995, -1049)
 
-[node name="Noble3" parent="NPCs" instance=ExtResource("8_4dq7p")]
+[node name="Noble3" parent="NPCs" instance=ExtResource("8_h3you")]
 position = Vector2(-44, 424)
 
-[node name="Noble4" parent="NPCs" instance=ExtResource("8_4dq7p")]
+[node name="Noble4" parent="NPCs" instance=ExtResource("8_h3you")]
 position = Vector2(1257, -70)
 
-[node name="VillageExit" parent="." groups=["Exit"] instance=ExtResource("6_svwsm")]
+[node name="VillageExit" parent="." groups=["Exit"] instance=ExtResource("9_mb03e")]
 position = Vector2(-1603, 332)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_mrx3q")
+autoplay = true
+bus = &"Music"
