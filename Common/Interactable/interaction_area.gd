@@ -8,10 +8,8 @@ var interact: Callable = func():
 
 
 func _on_body_exited(_body: Node2D) -> void:
-	print("exited")
 	InteractionManager.unregister_area(self)
 
 func _on_body_entered(_body: Node2D) -> void:
-	print("entered")
 	InteractionManager.register_area(self)
 

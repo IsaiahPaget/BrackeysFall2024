@@ -14,7 +14,7 @@ var _can_advance_line = false
 signal dialog_finished
 
 func start_dialog(position: Vector2, lines: Array[String]):
-	if _is_dialog_active:
+	if _is_dialog_active or lines.size() <= 0:
 		return
 
 	_dialog_lines = lines
@@ -25,7 +25,6 @@ func start_dialog(position: Vector2, lines: Array[String]):
 	_is_dialog_active = true
 
 func _show_text_box():
-	print(_current_line_index)
 	_text_box = text_box_scene.instantiate()
 	_text_box.finished_displaying.connect(_on_text_box_finished_displaying)
 	get_tree().root.add_child(_text_box)

@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @onready var _hud = get_tree().get_first_node_in_group("Hud")
 @onready var AS = $AnimatedSprite2D
+@onready var rate_persuation_level := 1.0 / get_tree().get_first_node_in_group("NPCs").get_child_count()
 @export var persuation_level := 1.0
-@export var rate_persuation_level := 0.25
 
 @export var speed = 300.0
 @export var success_particles: GPUParticles2D

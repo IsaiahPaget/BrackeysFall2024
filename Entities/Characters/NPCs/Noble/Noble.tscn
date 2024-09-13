@@ -268,11 +268,15 @@ radius = 45.0444
 [node name="Noble" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -10)
+collision_layer = 4
+collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 safe_margin = 2.0
 script = ExtResource("1_bebur")
 persuation_level = 4
+positive_dialog = "Ahh, this is all your fault!\\"
+negative_dialog = "Eww, get away from me peasant!\\"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.28, 0.316, 1, 1)
@@ -335,6 +339,7 @@ one_shot = true
 explosiveness = 0.75
 
 [node name="InteractionArea" parent="." instance=ExtResource("9_y4r51")]
+unique_name_in_owner = true
 action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]

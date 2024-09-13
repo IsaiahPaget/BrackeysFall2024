@@ -268,11 +268,15 @@ radius = 35.0571
 [node name="Worker" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -10)
+collision_layer = 4
+collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 safe_margin = 2.0
 script = ExtResource("1_ixtbu")
 persuation_level = 2
+positive_dialog = "Ahh, everybody run!\\"
+negative_dialog = "I would have heard something from the city officials.\\"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 modulate = Color(0.905882, 0.786573, 0.214731, 1)
@@ -341,6 +345,7 @@ action_name = "talk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 position = Vector2(0, 8)
+scale = Vector2(1.15201, 1.14384)
 shape = SubResource("CircleShape2D_8wk6n")
 
 [connection signal="timeout" from="PathFinderTimer" to="StateMachine/Exiting" method="_on_timer_timeout"]

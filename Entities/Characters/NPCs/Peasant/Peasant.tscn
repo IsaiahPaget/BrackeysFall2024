@@ -263,15 +263,18 @@ scale_min = 0.02
 scale_max = 0.05
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c7lst"]
-radius = 36.0139
+radius = 41.0122
 
 [node name="Peasant" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -10)
+collision_mask = 3
 motion_mode = 1
 wall_min_slide_angle = 0.0
 safe_margin = 2.0
 script = ExtResource("1_xxb8t")
+positive_dialog = "Noooooo!\\"
+negative_dialog = "You're crazy\\"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -304,6 +307,9 @@ npc = NodePath("../..")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
+avoidance_enabled = true
+radius = 20.0
+avoidance_layers = 0
 
 [node name="PathFinderTimer" type="Timer" parent="."]
 unique_name_in_owner = true

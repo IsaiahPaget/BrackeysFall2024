@@ -27,22 +27,27 @@ position = Vector2(0, 250)
 [node name="Peasant" parent="NPCs" instance=ExtResource("5_tyhdn")]
 z_index = 1
 position = Vector2(324, -355)
+positive_dialog = "Ahhh, are you serious?\\That’s terrifying\\"
 
 [node name="Peasant2" parent="NPCs" instance=ExtResource("5_tyhdn")]
 z_index = 1
 position = Vector2(-561, -188)
+positive_dialog = "Ohh, we need to get out of here quickly!\\"
 
 [node name="Peasant3" parent="NPCs" instance=ExtResource("5_tyhdn")]
 z_index = 1
 position = Vector2(234, 362)
+positive_dialog = "No, this can’t be happening.\\We must warn everyone!\\"
 
 [node name="Peasant4" parent="NPCs" instance=ExtResource("5_tyhdn")]
 z_index = 1
 position = Vector2(393, 199)
+positive_dialog = "Ahhh, I can see it now.\\We should gather our things and leave.\\"
 
 [node name="Peasant5" parent="NPCs" instance=ExtResource("5_tyhdn")]
 z_index = 1
 position = Vector2(-859, -154)
+positive_dialog = "Ohh, let’s hurry and find a safe place.\\This is going to be bad.\\"
 
 [node name="Peasant6" parent="NPCs" instance=ExtResource("5_tyhdn")]
 z_index = 1
