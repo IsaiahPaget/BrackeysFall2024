@@ -277,6 +277,7 @@ positive_dialog = "Noooooo!\\"
 negative_dialog = "You're crazy\\"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_ktew3")
 animation = &"Idle_Front"

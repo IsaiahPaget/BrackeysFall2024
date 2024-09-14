@@ -19,149 +19,104 @@ script = ExtResource("1_qhhmf")
 
 [node name="Player" parent="." instance=ExtResource("3_8qi0k")]
 z_index = 1
-position = Vector2(0, 250)
+position = Vector2(712, 277)
 
 [node name="Map" parent="." instance=ExtResource("4_habmi")]
 
 [node name="NPCs" type="Node" parent="." groups=["NPCs"]]
 
 [node name="Peasant" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(324, -355)
-positive_dialog = "Ahhh, are you serious?\\That’s terrifying\\"
+position = Vector2(-118, -783)
 
 [node name="Peasant2" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(-561, -188)
-positive_dialog = "Ohh, we need to get out of here quickly!\\"
+position = Vector2(-516, -1210)
 
 [node name="Peasant3" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(234, 362)
-positive_dialog = "No, this can’t be happening.\\We must warn everyone!\\"
+position = Vector2(626, -639)
 
 [node name="Peasant4" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(393, 199)
-positive_dialog = "Ahhh, I can see it now.\\We should gather our things and leave.\\"
+position = Vector2(1811, -363)
 
 [node name="Peasant5" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(-859, -154)
-positive_dialog = "Ohh, let’s hurry and find a safe place.\\This is going to be bad.\\"
+position = Vector2(1456, -477)
 
 [node name="Peasant6" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(-1644, -578)
+position = Vector2(2202, -1047)
 
 [node name="Peasant7" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(424, -455)
-positive_dialog = "Ahhh, are you serious?\\That’s terrifying\\"
+position = Vector2(1237, -1184)
 
 [node name="Peasant8" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(-1642, -612)
-positive_dialog = "Ohh, we need to get out of here quickly!\\"
+position = Vector2(565, -1445)
 
 [node name="Peasant9" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(-2969, -806)
-positive_dialog = "No, this can’t be happening.\\We must warn everyone!\\"
-
-[node name="Peasant10" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(-2763, -270)
-positive_dialog = "Ahhh, I can see it now.\\We should gather our things and leave.\\"
-
-[node name="Peasant11" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(1341, 664)
-positive_dialog = "Ohh, let’s hurry and find a safe place.\\This is going to be bad.\\"
-
-[node name="Peasant12" parent="NPCs" instance=ExtResource("5_muqxi")]
-z_index = 1
-position = Vector2(-684, -236)
+position = Vector2(1804, -1546)
 
 [node name="Worker" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-653, 806)
-
-[node name="Worker2" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-129, 1107)
-
-[node name="Worker3" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-1221, 84)
-
-[node name="Worker4" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-300, -422)
-
-[node name="Worker5" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(855, -129)
-
-[node name="Worker13" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-2149, -1222)
-
-[node name="Worker14" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-1747, -1412)
-
-[node name="Worker15" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-1912, -717)
-
-[node name="Worker16" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-818, -972)
+position = Vector2(441, -162)
 
 [node name="Guard" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-2502, -131)
+position = Vector2(-82, 98)
 
 [node name="Guard2" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-2061, -379)
+position = Vector2(-409, -692)
 
 [node name="Guard3" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-1061, -860)
+position = Vector2(-681, -987)
 
 [node name="Guard4" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-840, -36)
+position = Vector2(-71, -1065)
 
 [node name="Guard5" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(533, -324)
+position = Vector2(408, -1316)
 
 [node name="Guard6" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(834, 824)
+position = Vector2(443, -943)
 
 [node name="Guard7" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-2612, -1030)
+position = Vector2(814, -425)
+
+[node name="Guard8" parent="NPCs" instance=ExtResource("7_ougum")]
+position = Vector2(1481, -585)
+
+[node name="Guard9" parent="NPCs" instance=ExtResource("7_ougum")]
+position = Vector2(1135, -1282)
 
 [node name="Noble" parent="NPCs" instance=ExtResource("8_h3you")]
-position = Vector2(-2296, 85)
+position = Vector2(1610, -1578)
 
 [node name="Noble2" parent="NPCs" instance=ExtResource("8_h3you")]
-position = Vector2(-995, -1049)
+position = Vector2(2132, -919)
 
-[node name="Peasant13" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(-3012, -273)
+[node name="Worker2" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(499, -1374)
 
-[node name="Peasant14" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(-3434, -504)
+[node name="Worker3" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(1319, -545)
 
-[node name="Peasant15" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(-1376, 471)
+[node name="Worker4" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(521, -727)
 
-[node name="Peasant16" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(-414, 1007)
+[node name="Worker5" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(-224, -757)
 
-[node name="Peasant17" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(86, 1280)
+[node name="Worker6" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(-441, -1179)
 
-[node name="Peasant18" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(560, 937)
+[node name="Worker7" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(1999, -983)
 
-[node name="Peasant19" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(1647, 255)
+[node name="Worker8" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(1735, -1497)
+
+[node name="Worker9" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(1097, -1191)
 
 [node name="VillageExit" parent="." groups=["Exit"] instance=ExtResource("9_mb03e")]
-position = Vector2(-1603, 332)
+position = Vector2(-495, 243)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(16, -6)
 stream = ExtResource("10_mrx3q")
 autoplay = true
 bus = &"Music"

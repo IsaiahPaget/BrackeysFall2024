@@ -75,6 +75,10 @@ advance_dialog={
 2d_physics/layer_3="NPCs"
 avoidance/layer_1="walls"
 
+[navigation]
+
+2d/default_edge_connection_margin=32.0
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
