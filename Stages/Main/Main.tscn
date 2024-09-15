@@ -18,99 +18,120 @@ script = ExtResource("1_qhhmf")
 [node name="HUD" parent="." instance=ExtResource("2_3a6jm")]
 
 [node name="Player" parent="." instance=ExtResource("3_8qi0k")]
-z_index = 1
-position = Vector2(712, 277)
+position = Vector2(831, 235)
 
-[node name="Map" parent="." instance=ExtResource("4_habmi")]
-
-[node name="NPCs" type="Node" parent="." groups=["NPCs"]]
+[node name="NPCs" type="Node2D" parent="." groups=["NPCs"]]
+y_sort_enabled = true
 
 [node name="Peasant" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(-118, -783)
+position = Vector2(924, 181)
+positive_dialog = "Hey...\\Yeah you.\\You saw it didn't you?\\The mountain, it bleeds molten earth.\\I am gonna get out of here.\\But maybe if alert the town folk of this disaster,  the lords will grant you freedom.\\Convince enough of the working class and the nobles may just believe you.\\But hey just start by talking to the peasants talk to much to the upper class and rumors might get out about mental fitness\\Good luck!\\"
 
 [node name="Peasant2" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(-516, -1210)
+position = Vector2(606, -626)
 
 [node name="Peasant3" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(626, -639)
+position = Vector2(-102, -755)
+positive_dialog = "No no no no...\\This can't be happening.\\Master will be so upset!\\I gotta get out of here!\\"
 
 [node name="Peasant4" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(1811, -363)
+position = Vector2(-526, -1229)
+positive_dialog = "Noooooo!\\My beats!!\\My poor baby beats!!\\"
 
 [node name="Peasant5" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(1456, -477)
+position = Vector2(536, -1450)
+positive_dialog = "A disaster?\\I have been waiting for a distraction.\\What do you say?\\You and me sneak into the nobles chambers on the way out?\\"
 
 [node name="Peasant6" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(2202, -1047)
+position = Vector2(1409, -490)
+positive_dialog = "Noooooo!\\Ahhh..\\Oh wait maybe this means I can escape?\\"
 
 [node name="Peasant7" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(1237, -1184)
+position = Vector2(1775, -373)
+positive_dialog = "You mean this place migh burn down?\\Finally, I knew this day would come.\\"
 
 [node name="Peasant8" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(565, -1445)
+position = Vector2(2015, -1028)
+positive_dialog = "What is a volcano?\\Oh you mean that glowing liquid that is coming out of that mountain?\\"
 
 [node name="Peasant9" parent="NPCs" instance=ExtResource("5_muqxi")]
-position = Vector2(1804, -1546)
+position = Vector2(1796, -1551)
+positive_dialog = "Yesss!\\Hey Robert! You can kiss my @$$!\\Whooo!\\"
 
-[node name="Worker" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(441, -162)
+[node name="Peasant10" parent="NPCs" instance=ExtResource("5_muqxi")]
+position = Vector2(1190, -1191)
+positive_dialog = "Noooooo!\\I am getting out of here!!\\"
 
 [node name="Guard" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-82, 98)
+position = Vector2(-64, -1066)
+positive_dialog = "Aaaahh!!\\Curse this place!\\"
 
 [node name="Guard2" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-409, -692)
+position = Vector2(-155, 119)
+positive_dialog = "This is why everyone is leaving!\\Aaaaah!!!\\"
+negative_dialog = "Back off, peasant!\\You have already had your time outside of the village!\\"
 
 [node name="Guard3" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-681, -987)
+position = Vector2(461, -960)
+negative_dialog = "A volcano, you must be nuts!\\Get back to your farm!!\\"
 
 [node name="Guard4" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(-71, -1065)
+position = Vector2(1006, -487)
+positive_dialog = "Everyone stay calm!!\\..........\\AAAAAHHH!\\"
+negative_dialog = "Back to work peasant!\\Or  else I will personally see to it, that your head roles!\\"
 
 [node name="Guard5" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(408, -1316)
+position = Vector2(1608, -510)
+positive_dialog = "Nooo!!\\My servants have run away!!\\"
 
 [node name="Guard6" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(443, -943)
-
-[node name="Guard7" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(814, -425)
-
-[node name="Guard8" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(1481, -585)
-
-[node name="Guard9" parent="NPCs" instance=ExtResource("7_ougum")]
-position = Vector2(1135, -1282)
+position = Vector2(1135, -1278)
+positive_dialog = "I must alert the other guards!\\"
 
 [node name="Noble" parent="NPCs" instance=ExtResource("8_h3you")]
-position = Vector2(1610, -1578)
+position = Vector2(-102, -1227)
+positive_dialog = "This is the day that you filth will pay for being born poor!!\\"
 
 [node name="Noble2" parent="NPCs" instance=ExtResource("8_h3you")]
-position = Vector2(2132, -919)
+position = Vector2(2104, -909)
+positive_dialog = "Aaaahh!!\\This is all your fault!\\"
+negative_dialog = "You peasant folk really are delusional.\\It brings a smile to my face.\\"
+
+[node name="Worker" parent="NPCs" instance=ExtResource("6_4ulf4")]
+position = Vector2(466, -1396)
+positive_dialog = "Uh oh!!\\I see it coming down the hill!\\"
+negative_dialog = "I do see it actually.\\No matter.\\This village has been the same for centuries, no reason this will change that!\\"
 
 [node name="Worker2" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(499, -1374)
+position = Vector2(-448, -1157)
+negative_dialog = "There would have been a scroll passed around by the guards if this were true.\\"
 
 [node name="Worker3" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(1319, -545)
+position = Vector2(-214, -761)
+positive_dialog = "Ahhh!!\\Why aren't the guards doing anything!!\\"
 
 [node name="Worker4" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(521, -727)
+position = Vector2(540, -597)
+negative_dialog = "A volcano!?\\You must have had too much ale again.\\You are making a fool out of yourself.\\Back to work!\\"
 
 [node name="Worker5" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-224, -757)
+position = Vector2(1504, -508)
+positive_dialog = "Aaaah!\\Everybody run!!!\\"
+negative_dialog = "Back to your plot of land, peasant..\\I don't wish to see you until dawn.\\"
 
 [node name="Worker6" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(-441, -1179)
+position = Vector2(2025, -951)
+positive_dialog = "I knew this would happen!\\Today is the day the lords pay for their sins!\\"
 
 [node name="Worker7" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(1999, -983)
+position = Vector2(1733, -1508)
+positive_dialog = "Hmmmm.\\I do not take orders from a peasant.\\... But it is time for my evening stroll.\\"
+negative_dialog = "Leave you say?\\The only way I am leaving is if everyone else leaves.\\"
 
 [node name="Worker8" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(1735, -1497)
-
-[node name="Worker9" parent="NPCs" instance=ExtResource("6_4ulf4")]
-position = Vector2(1097, -1191)
+position = Vector2(1270, -1193)
+positive_dialog = "Ohh no. \\Lord Sam, I am sorry for what I thought about you!!\\"
+negative_dialog = "Hahahaha\\You really have lost it this time.\\"
 
 [node name="VillageExit" parent="." groups=["Exit"] instance=ExtResource("9_mb03e")]
 position = Vector2(-495, 243)
@@ -120,3 +141,5 @@ position = Vector2(16, -6)
 stream = ExtResource("10_mrx3q")
 autoplay = true
 bus = &"Music"
+
+[node name="Map" parent="." instance=ExtResource("4_habmi")]

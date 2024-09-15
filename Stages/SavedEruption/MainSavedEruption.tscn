@@ -3,8 +3,8 @@
 [node name="MainSavedEruption" type="Node2D"]
 
 [node name="Label" type="Label" parent="."]
-offset_left = 539.0
-offset_top = 274.0
-offset_right = 579.0
-offset_bottom = 297.0
-text = "You lost, everyone died"
+offset_left = 510.0
+offset_top = 317.0
+offset_right = 743.0
+offset_bottom = 340.0
+text = "You won, you saved everyone!"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpw10ip4c8tq2"]
+[gd_scene load_steps=10 format=3 uid="uid://cpw10ip4c8tq2"]
 
 [ext_resource type="Script" path="res://UI/HUD/hud.gd" id="1_6ob2c"]
 [ext_resource type="PackedScene" uid="uid://b77cb4nfvgp7c" path="res://Common/Timers/CountDown.tscn" id="2_wy332"]
@@ -26,6 +26,25 @@ bg_color = Color(0.451123, 0.68105, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijbae"]
 bg_color = Color(0.92, 0.306667, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_a2niq"]
+offsets = PackedFloat32Array(0.326667, 0.78)
+colors = PackedColorArray(0.37, 0.2923, 0.2923, 1, 0.35, 0.35, 0.35, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y5eav"]
+gradient = SubResource("Gradient_a2niq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_afx6e"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 0)
+direction = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+gravity = Vector3(0, 980, 0)
+scale_min = 10.0
+scale_max = 10.0
+color_ramp = SubResource("GradientTexture1D_y5eav")
 
 [node name="HUD" type="CanvasLayer" groups=["Hud"]]
 script = ExtResource("1_6ob2c")
@@ -106,5 +125,13 @@ max_value = 600.0
 value = 600.0
 
 [node name="CountDown" parent="." instance=ExtResource("2_wy332")]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(-104, 20)
+scale = Vector2(958.134, -0.310436)
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_afx6e")
+lifetime = 1.2
+fixed_fps = 15
 
 [connection signal="timeout" from="CountDown" to="." method="_on_count_down_timeout"]
