@@ -6,24 +6,6 @@
 > 
 > Music: Autumn
 
-[**Title**](\title)
-
-[**Hook**](\hook)
-
-[**Genre**](\genre)
-
-[**Target Audience**](\target-audience)
-
-[**Core Gameplay Loop**](\core-gameplay-loop)
-
-[**Setting**](\setting)
-
-[**Story**](\story)
-
-[**Unique Selling Points**](\unique-selling-points)
-
-[**Visual Style**](\visual-style)
-
 ## Title
 
 Save Pompeii
