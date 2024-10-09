@@ -27,7 +27,7 @@ You are a peasant who has noticed that Mt Visuvius is about to erupt, you have t
 
 - Brackey Fall 2024 Game Jam 
 
-## Core Gameplay Loop {#core-gameplay-loop}
+## Core Gameplay Loop
 
 - Speak to villagers, up your persuation and then speak to higher class villagers to further your persuation.
 
